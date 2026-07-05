@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import '@xyflow/react/dist/style.css';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SampleNode } from "@/Templates/samplenode";
-import { SampleDatabase, SampleDataflow } from "@/Templates/samplenodesection2";
+import { SampleDatabase, SampleDataflow, SampleSequence, SampleUmlClass, SampleEr, SampleState, SampleMindMap, SampleActivity } from "@/Templates/samplenodesection2";
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Trustedlist } from "@/features/mainpage/trustedlink";
 import { Featurelist } from "@/features/mainpage/featureslist";
@@ -107,6 +107,30 @@ export const MainPage = () => {
                             <div className="flex flex-col w-full gap-3 h-80">
                                 <h1 className="text-xl font-medium"><span className="text-cyan-500">Database</span> Schema</h1>
                                 <SampleDatabase />
+                            </div>
+                            <div className="flex flex-col w-full gap-3 h-80">
+                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Sequence</span> Diagram</h1>
+                                <SampleSequence />
+                            </div>
+                            <div className="flex flex-col w-full gap-3 h-80">
+                                <h1 className="text-xl font-medium"><span className="text-cyan-500">UML Class</span> Diagram</h1>
+                                <SampleUmlClass />
+                            </div>
+                            <div className="flex flex-col w-full gap-3 h-80">
+                                <h1 className="text-xl font-medium"><span className="text-cyan-500">ER</span> Diagram</h1>
+                                <SampleEr />
+                            </div>
+                            <div className="flex flex-col w-full gap-3 h-80">
+                                <h1 className="text-xl font-medium"><span className="text-cyan-500">State</span> Diagram</h1>
+                                <SampleState />
+                            </div>
+                            <div className="flex flex-col w-full gap-3 h-80">
+                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Mind Map</span> Diagram</h1>
+                                <SampleMindMap />
+                            </div>
+                            <div className="flex flex-col w-full gap-3 h-80">
+                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Activity</span> Diagram</h1>
+                                <SampleActivity />
                             </div>
                         </div>
                     </div>
