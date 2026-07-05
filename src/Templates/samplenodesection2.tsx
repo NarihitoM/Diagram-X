@@ -1,6 +1,6 @@
 import { Background, Handle, Position, ReactFlow, useEdgesState, useNodesState, } from "@xyflow/react";
 import React from "react";
-import { type ReactElement, type JSXElementConstructor, type ReactNode, type ReactPortal, type Key, useEffect } from "react";
+import { type Key, useEffect } from "react";
 
 const baseStyle = "text-cyan-500 text-center font-medium";
 

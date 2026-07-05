@@ -21,7 +21,7 @@ import { Profile } from "./pages/dashboard/profile";
 
 function App() {
 
-  const { userid, fetchuser } = useAuth();
+  const { fetchuser } = useAuth();
 
   useEffect(() => {
     fetchuser();
