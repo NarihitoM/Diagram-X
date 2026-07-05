@@ -62,31 +62,7 @@ Diagram X is a web-based diagram editor that lets you design and visualize syste
 
 ---
 
-## Architecture
-
-```
-User → React (Vite :5173)
-  ├── Axios → diagram-x-server.vercel.app  (MongoDB + Auth + Workspace + AI Agent)
-  └── Axios → diagram-xchatbot.vercel.app  (Public AI Chatbot)
-```
-
-### Repositories
-
-| Service | Description |
-|---------|-------------|
-| [`diagramx`](https://github.com/NarihitoM/Diagram-X) | Frontend (this repo) |
-| [`diagramxdb`](https://github.com/NarihitoM/DiagramXServerChatbot) | Backend — Express + MongoDB + Groq API |
-| [`diagramx-aiserver`](https://github.com/NarihitoM/diagramXchatbot) | AI Chatbot server — Express + Groq |
-
----
-
 ## Installation
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) >= 18
-- [Git](https://git-scm.com/)
-- Running instances of [diagramxdb](https://github.com/NarihitoM/DiagramXServerChatbot) and [diagramx-aiserver](https://github.com/NarihitoM/diagramXchatbot) (or use the deployed versions)
 
 ### Setup
 
