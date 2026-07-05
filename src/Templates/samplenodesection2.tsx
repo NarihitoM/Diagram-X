@@ -35,7 +35,7 @@ export const Dataflow = ({ data }: any) => {
 
 export const SequenceNode = ({ data }: any) => {
     return (
-        <div className="bg-white rounded-lg min-w-28" style={{ border: '1px solid #00bcd4' }}>
+        <div className="bg-white rounded-lg min-w-28">
             <Handle type="target" position={Position.Left} id="left" />
             <div className="px-3 py-2 bg-cyan-500 text-white text-center font-bold text-sm rounded-t-sm">
                 {data.title || "Participant"}
@@ -50,7 +50,7 @@ export const SequenceNode = ({ data }: any) => {
 
 export const UmlClassNode = ({ data }: any) => {
     return (
-        <div className="bg-white rounded-lg min-w-44" style={{ border: '1px solid #00bcd4' }}>
+        <div className="bg-white rounded-lg min-w-44">
             <Handle type="target" position={Position.Top} id="top" />
             <div className="px-3 py-2 bg-cyan-600 text-white text-center font-bold text-sm">
                 {data.title || "ClassName"}
@@ -74,7 +74,7 @@ export const UmlClassNode = ({ data }: any) => {
 
 export const ErNode = ({ data }: any) => {
     return (
-        <div className="bg-white rounded-lg min-w-36" style={{ border: '1px solid #00bcd4' }}>
+        <div className="bg-white rounded-lg min-w-36">
             <Handle type="target" position={Position.Top} id="top" />
             <div className="px-3 py-2 bg-emerald-500 text-white text-center font-bold text-sm rounded-t-sm">
                 {data.title || "Entity"}
@@ -97,7 +97,7 @@ export const StateNode = ({ data }: any) => {
     const isInitial = data.type === "initial";
     const isFinal = data.type === "final";
     return (
-        <div className="bg-white rounded-lg min-w-28" style={{ border: '1px solid #00bcd4' }}>
+        <div className="bg-white rounded-lg min-w-28">
             <Handle type="target" position={Position.Top} id="top" />
             <div className="px-4 py-3 text-center">
                 {isInitial && <div className="w-3 h-3 rounded-full bg-green-500 mx-auto mb-1" />}
@@ -112,8 +112,7 @@ export const StateNode = ({ data }: any) => {
 export const MindMapNode = ({ data }: any) => {
     const color = data.color || "#06b6d4";
     return (
-        <div className="bg-white rounded-full min-w-24 min-h-24 flex items-center justify-center"
-            style={{ border: '1px solid #00bcd4' }}>
+        <div className="bg-white rounded-full min-w-24 min-h-24 flex items-center justify-center">
             <Handle type="target" position={Position.Left} id="left" />
             <h1 className="text-sm font-bold text-center px-2" style={{ color }}>
                 {data.title || "Idea"}
@@ -131,7 +130,7 @@ export const ActivityNode = ({ data }: any) => {
 
     if (isStart) {
         return (
-            <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center" style={{ border: '1px solid #00bcd4' }}>
+            <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
                 <Handle type="source" position={Position.Bottom} id="bottom" />
                 <div className="w-8 h-8 rounded-full bg-green-500" />
             </div>
@@ -139,7 +138,7 @@ export const ActivityNode = ({ data }: any) => {
     }
     if (isEnd) {
         return (
-            <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center" style={{ border: '1px solid #00bcd4' }}>
+            <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center">
                 <Handle type="target" position={Position.Top} id="top" />
                 <div className="w-8 h-8 rounded-full bg-red-500" />
             </div>
@@ -157,7 +156,7 @@ export const ActivityNode = ({ data }: any) => {
         )
     }
     return (
-        <div className="bg-white rounded-lg min-w-32" style={{ border: '1px solid #00bcd4' }}>
+        <div className="bg-white rounded-lg min-w-32">
             <Handle type="target" position={Position.Top} id="top" />
             <div className="px-4 py-3 text-center">
                 <span className="text-sm font-semibold text-cyan-600">{data.title || "Action"}</span>
