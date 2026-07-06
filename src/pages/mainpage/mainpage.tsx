@@ -8,9 +8,11 @@ import { SampleDatabase, SampleDataflow, SampleSequence, SampleUmlClass, SampleE
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Trustedlist } from "@/features/mainpage/trustedlink";
 import { Featurelist } from "@/features/mainpage/featureslist";
+import { useAuth } from "@/store/authstore";
 
 
 export const MainPage = () => {
+    const { userid } = useAuth();
 
     return (
         <>
@@ -25,9 +27,9 @@ export const MainPage = () => {
                     </div>
                 </div>
                 <div className="flex flex-row">
-                    <Link className="bg-cyan-500 flex items-center p-2 font-medium rounded-lg text-sm text-white max-md:hidden" to="/signup">
+                    <Link className="bg-cyan-500 flex items-center p-2 font-medium rounded-lg text-sm text-white max-md:hidden" to={userid ? "/dashboard" : "/signup"}>
                         <User className="size-4 mr-1" />
-                        Sign Up
+                        {userid ? "Dashboard" : "Sign Up"}
                     </Link>
                     <div className="md:hidden">
                         <Sheet>
@@ -51,9 +53,9 @@ export const MainPage = () => {
                                         <Link to="/contact" className="text-muted-foreground font-medium">Contact Us</Link>
                                     </SheetClose>
                                     <SheetClose asChild>
-                                        <Link className="bg-cyan-500 flex items-center p-2 font-medium rounded-lg text-sm text-white" to="/signup">
+                                        <Link className="bg-cyan-500 flex items-center p-2 font-medium rounded-lg text-sm text-white" to={userid ? "/dashboard" : "/signup"}>
                                             <User className="size-4 mr-1" />
-                                            Sign Up
+                                            {userid ? "Dashboard" : "Sign Up"}
                                         </Link>
                                     </SheetClose>
                                 </nav>
