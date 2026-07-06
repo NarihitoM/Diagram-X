@@ -5,8 +5,10 @@ import {
     addEdge,
     useEdgesState,
     useNodesState,
+    useReactFlow,
 } from "@xyflow/react";
-import { Send, Trash, X } from "lucide-react";
+import { toPng } from "html-to-image";
+import { Send, Trash, X, Download } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { nodeTypes } from "@/Templates/samplenodesection2";
 import { Input } from "@/components/ui/input";
@@ -69,6 +71,19 @@ export const Workspace = () => {
     const [nodeSearch, setNodeSearch] = useState<string>("");
     const scroll = useRef<HTMLDivElement | null>(null);
     const [selectedEdgeId, setSelectedEdgeId] = useState<string | null>(null);
+
+    const exportImage = useCallback(() => {
+        if (!reactFlowWrapper.current) return;
+        toPng(reactFlowWrapper.current, { backgroundColor: '#ffffff', quality: 1 }).then((dataUrl) => {
+            const link = document.createElement('a');
+            link.download = `diagram-${workspaceid || 'export'}.png`;
+            link.href = dataUrl;
+            link.click();
+            toast.success('Image exported successfully!');
+        }).catch(() => {
+            toast.error('Failed to export image');
+        });
+    }, [workspaceid]);
 
 
     const [openchat, setOpenchat] = useState<boolean>(false);
@@ -575,6 +590,11 @@ export const Workspace = () => {
                         </p>
                     </div>
                     <div ref={reactFlowWrapper} className="relative w-full h-screen mt-3">
+                        <div className="absolute top-3 right-3 z-10">
+                            <Button onClick={exportImage} className="px-3 py-2 bg-cyan-500 hover:bg-cyan-700 text-white rounded flex items-center gap-2">
+                                <Download className="w-4 h-4" /> Export Image
+                            </Button>
+                        </div>
                        
                         <ReactFlow
                             nodes={nodes}
