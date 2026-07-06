@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Book, ChartBar, CloudLightningIcon, GalleryVerticalEnd, List, Menu, Rocket, User } from "lucide-react"
+import { ArrowRight, Book, ChartBar, CloudLightningIcon, List, Menu, Rocket, User } from "lucide-react"
 import { Link } from "react-router-dom"
 import '@xyflow/react/dist/style.css';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -9,6 +9,7 @@ import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle }
 import { Trustedlist } from "@/features/mainpage/trustedlink";
 import { Featurelist } from "@/features/mainpage/featureslist";
 import { useAuth } from "@/store/authstore";
+import DiagramXLogo from "@/assets/DiagramX-Icon.png";
 
 
 export const MainPage = () => {
@@ -18,7 +19,7 @@ export const MainPage = () => {
         <>
             <header className="fixed top-0 left-0 w-full z-50 flex p-3 justify-between items-center border-b border-black/15 bg-white/10 backdrop-blur-md">
                 <div className="flex flex-row items-center gap-2">
-                    <GalleryVerticalEnd className="bg-cyan-500 size-10 p-2 rounded-lg text-white" />
+                    <img src={DiagramXLogo} alt="Diagram X" className="size-12 rounded-lg" />
                     <h1 className="font-bold text-xl"><span className="text-cyan-500">D</span>iagram X</h1>
                     <div className="hidden md:flex items-center gap-4 ml-5">
                         <Link to="/" className="text-muted-foreground font-medium">DiagramX</Link>
@@ -201,9 +202,12 @@ export const MainPage = () => {
                 <div className="w-full px-10 py-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-15">
                         <div>
-                            <h2 className="text-3xl font-bold ">
-                                <span className="text-cyan-500">D</span>iagram X
-                            </h2>
+                            <div className="flex items-center gap-2 mb-2">
+                                <img src={DiagramXLogo} alt="Diagram X" className="size-10 rounded" />
+                                <h2 className="text-3xl font-bold ">
+                                    <span className="text-cyan-500">D</span>iagram X
+                                </h2>
+                            </div>
                             <p className="mt-3 text-[17px] text-gray-600 font-medium">
                                 Create diagrams, workflows, and ideas with a powerful
                                 node-based editor built for creators and students.

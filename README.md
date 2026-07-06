@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="src/assets/DiagramX.png" alt="Diagram X Logo" width="120" />
+
 # Diagram X
 
 **Node-Based Diagram & Flow Editor**
