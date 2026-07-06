@@ -73,7 +73,16 @@ export const Workspace = () => {
 
     const exportImage = useCallback(() => {
         if (!reactFlowWrapper.current) return;
-        toPng(reactFlowWrapper.current, { backgroundColor: '#ffffff', quality: 1 }).then((dataUrl) => {
+        toPng(reactFlowWrapper.current, {
+            backgroundColor: '#ffffff',
+            quality: 1,
+            pixelRatio: 3,
+            cacheBust: true,
+            filter: (node) => {
+                const excluded = node?.classList?.contains('react-flow__attribution');
+                return !excluded;
+            },
+        }).then((dataUrl) => {
             const link = document.createElement('a');
             link.download = `diagram-${workspaceid || 'export'}.png`;
             link.href = dataUrl;
