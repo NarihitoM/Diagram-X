@@ -1,4 +1,3 @@
-import { GalleryVerticalEnd } from 'lucide-react';
 import { useAuth } from '@/store/authstore';
 import { Toaster, toast } from 'sonner';
 import { Button } from "@/components/ui/button"
@@ -15,6 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGoogleLogin, type TokenResponse } from '@react-oauth/google';
 import { authapi } from '@/api/authapi';
 import { Spinner } from '@/components/ui/spinner';
+import DiagramXLogo from "@/assets/DiagramX-Icon.png"
 
 export const Signup = () => {
 
@@ -74,17 +74,15 @@ export const Signup = () => {
             <div className="grid min-h-screen lg:grid-cols-2">
                 <div className="bg-muted relative hidden lg:block">
                     <div className="flex gap-3 justify-center bg-linear-to-tl from-cyan-500 to-white items-center h-full">
-                        <GalleryVerticalEnd className="size-20 p-2 rounded-lg bg-cyan-500 text-white" />
-                        <span className="font-bold text-3xl text-primary"><span className="text-cyan-500">D</span>iagram-X</span>
+                        <img src={DiagramXLogo} alt="Diagram X" className="size-20 rounded-lg" />
+                        <span className="font-bold text-3xl text-primary"><span className="text-cyan-500">D</span>iagram X</span>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 p-6 md:p-4">
                     <div className="flex justify-center gap-2 md:justify-center">
                         <Link to="/" className="flex items-center gap-2 font-medium">
-                            <div className="bg-cyan-500 text-primary-foreground flex size-6 items-center justify-center rounded-md">
-                                <GalleryVerticalEnd className="size-4" />
-                            </div>
-                            <span className="font-bold text-3xl text-primary"><span className="text-cyan-500">D</span>iagram-X</span>
+                            <img src={DiagramXLogo} alt="Diagram X" className="size-6 rounded-md" />
+                            <span className="font-bold text-3xl text-primary"><span className="text-cyan-500">D</span>iagram X</span>
                         </Link>
                     </div>
                     <div className="flex flex-1 items-center justify-center">

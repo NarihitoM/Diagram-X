@@ -1,71 +1,23 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Book, ChartBar, CloudLightningIcon, List, Menu, Rocket, User } from "lucide-react"
+import { ArrowRight, Book, ChartBar, CloudLightningIcon, List, Rocket } from "lucide-react"
 import { Link } from "react-router-dom"
 import '@xyflow/react/dist/style.css';
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SampleNode } from "@/Templates/samplenode";
 import { SampleDatabase, SampleDataflow, SampleSequence, SampleUmlClass, SampleEr, SampleState, SampleMindMap, SampleActivity } from "@/Templates/samplenodesection2";
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Trustedlist } from "@/features/mainpage/trustedlink";
 import { Featurelist } from "@/features/mainpage/featureslist";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { useAuth } from "@/store/authstore";
-import DiagramXLogo from "@/assets/DiagramX-Icon.png";
 
 
 export const MainPage = () => {
-    const { userid } = useAuth();
-
+    const { userid } = useAuth()
     return (
         <>
-            <header className="fixed top-0 left-0 w-full z-50 flex p-3 justify-between items-center border-b border-black/15 bg-white/10 backdrop-blur-md">
-                <div className="flex flex-row items-center gap-2">
-                    <img src={DiagramXLogo} alt="Diagram X" className="size-15 rounded-lg" />
-                    <h1 className="font-bold text-xl"><span className="text-cyan-500">D</span>iagram X</h1>
-                    <div className="hidden md:flex items-center gap-4 ml-5">
-                        <Link to="/" className="text-muted-foreground font-medium">DiagramX</Link>
-                        <Link to="/blog" className="text-muted-foreground font-medium">Blog</Link>
-                        <Link to="/contact" className="text-muted-foreground font-medium">Contact Us</Link>
-                    </div>
-                </div>
-                <div className="flex flex-row">
-                    <Link className="bg-cyan-500 flex items-center p-2 font-medium rounded-lg text-sm text-white max-md:hidden" to={userid ? "/dashboard" : "/signup"}>
-                        <User className="size-4 mr-1" />
-                        {userid ? "Dashboard" : "Sign Up"}
-                    </Link>
-                    <div className="md:hidden">
-                        <Sheet>
-                            <SheetTrigger asChild>
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="md:hidden">
-                                    <Menu className="size-5" />
-                                </Button>
-                            </SheetTrigger>
-                            <SheetContent side="top" className="w-full h-full">
-                                <nav className="flex flex-col items-center justify-center h-full gap-5 text-xl font-medium">
-                                    <SheetClose asChild>
-                                        <Link to="/" className="text-muted-foreground font-medium">DiagramX</Link>
-                                    </SheetClose>
-                                    <SheetClose asChild>
-                                        <Link to="/blog" className="text-muted-foreground font-medium">Blog</Link>
-                                    </SheetClose>
-                                    <SheetClose asChild>
-                                        <Link to="/contact" className="text-muted-foreground font-medium">Contact Us</Link>
-                                    </SheetClose>
-                                    <SheetClose asChild>
-                                        <Link className="bg-cyan-500 flex items-center p-2 font-medium rounded-lg text-sm text-white" to={userid ? "/dashboard" : "/signup"}>
-                                            <User className="size-4 mr-1" />
-                                            {userid ? "Dashboard" : "Sign Up"}
-                                        </Link>
-                                    </SheetClose>
-                                </nav>
-                            </SheetContent>
-                        </Sheet>
-                    </div>
-                </div>
-            </header>
-            <main className="h-full w-full">
+            <SiteHeader activePage="home" />
+            <main className="h-full w-full pt-16">
                 <section className="bg-linear-to-t from-cyan-50 to-white flex max-md:flex-col justify-between max-md:justify-center max-md:py-30 items-center min-h-screen">
                     <div className="flex flex-col px-10 items-start max-md:items-center gap-4">
                         <Button className="bg-cyan-500 rounded-full shadow-[3px_3px_5px_0_cyan] text-[16px] animate-bounce">Diagram X</Button>
@@ -77,13 +29,17 @@ export const MainPage = () => {
                             A customizable flowchart, diagram, schema with node-based editor and interactive diagrams.
                         </p>
                         <div className="flex justify-center items-center gap-4 max-md:w-full">
-                            <Button className="bg-cyan-500 hover:bg-cyan-600 flex items-center gap-2">
-                                <CloudLightningIcon /> Quick Start
-                            </Button>
-                            <Button variant="secondary" className="flex items-center gap-2">
-                                <Book />
-                                Read Documents
-                            </Button>
+                            <Link to={userid ? "/dashboard" : "/login"}>
+                                <Button className="bg-cyan-500 hover:bg-cyan-600 flex items-center gap-2">
+                                    <CloudLightningIcon /> Quick Start
+                                </Button>
+                            </Link>
+                            <Link to="/docs">
+                                <Button variant="secondary" className="flex items-center gap-2">
+                                    <Book />
+                                    Read Documents
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                     <div className="mt-5 w-full h-110 ">
@@ -99,9 +55,11 @@ export const MainPage = () => {
                             <span className="font-medium text-cyan-500">Diagram X</span> lets you build interactive, flexible workflow diagrams with custom or non-custom node that evolve
                             with your ideas.
                         </p>
-                        <Button className="bg-cyan-500 hover:bg-cyan-600 w-30 flex items-center gap-2">
-                            Get Started
-                        </Button>
+                        <Link to={userid ? "/dashboard" : "/login"}>
+                            <Button className="bg-cyan-500 hover:bg-cyan-600 w-30 flex items-center gap-2">
+                                Get Started
+                            </Button>
+                        </Link>
                         <div className="max-md:flex grid grid-cols-2 mt-10 max-md:flex-col max-md:items-center max-md:justify-center gap-3">
                             <div className="flex flex-col w-full gap-3 h-80">
                                 <h1 className="text-xl font-medium"><span className="text-cyan-500">Dataflow</span> Schema</h1>
@@ -155,9 +113,11 @@ export const MainPage = () => {
                     </div>
                     <p className="font-medium text-[19px] text-center">Diagram X is a popular workflow diagram editior which has been widely used by <span className="font-bold text-cyan-500">100K+</span>
                         users as of this month and chosen by <span className="font-bold text-cyan-500">10+</span> companies.{<br />}This platform is also supported by <span className="font-bold text-cyan-500">ReactFlow.</span></p>
-                    <Button className="bg-cyan-500 hover:bg-cyan-700 max-md:w-full rounded-full">
-                        Start Building With Diagram X <ArrowRight />
-                    </Button>
+                    <Link to={userid ? "/dashboard" : "/login"}>
+                        <Button className="bg-cyan-500 hover:bg-cyan-700 max-md:w-full rounded-full">
+                            Start Building With Diagram X <ArrowRight />
+                        </Button>
+                    </Link>
                 </section>
                 <section className="flex flex-col items-center bg-linear-to-br from-white to-cyan-50  gap-10 min-h-screen py-20 px-10">
                     <div className="flex flex-row justify-center gap-3 items-center">
@@ -195,44 +155,12 @@ export const MainPage = () => {
                         <h1 className="font-semibold text-5xl max-md:text-3xl">Let's Get Started!</h1>
                         <Rocket className="text-cyan-500 size-8"/>
                     </div>
-                    <Button className="bg-cyan-500 rounded-full hover:bg-cyan-600">Click here to sign up today and start<ArrowRight/></Button>
+                    <Link to={userid ? "/dashboard" : "/signup"}>
+                        <Button className="bg-cyan-500 rounded-full hover:bg-cyan-600">Click here to sign up today and start<ArrowRight/></Button>
+                    </Link>
                 </section>
             </main >
-            <footer className="w-full border-t border-black/10 dark:border-white/10 bg-white dark:bg-black">
-                <div className="w-full px-10 py-12">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-15">
-                        <div>
-                            <div className="flex items-center gap-2 mb-2">
-                                <img src={DiagramXLogo} alt="Diagram X" className="size-10 rounded" />
-                                <h2 className="text-3xl font-bold ">
-                                    <span className="text-cyan-500">D</span>iagram X
-                                </h2>
-                            </div>
-                            <p className="mt-3 text-[17px] text-gray-600 font-medium">
-                                Create diagrams, workflows, and ideas with a powerful
-                                node-based editor built for creators and students.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-[17px] mb-3">Product</h3>
-                            <div className="flex flex-col space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                                <Link to="/" className="hover:text-cyan-500 cursor-pointer">Diagram-X Info</Link>
-                                <Link to="/blog" className="hover:text-cyan-500 cursor-pointer">Blog</Link>
-                                <Link to="/contact" className="hover:text-cyan-500 cursor-pointer">About Us</Link>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-[17px] mb-3">Legal</h3>
-                            <div className="flex flex-col space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                                <Link to="/terms" className="hover:text-cyan-500 cursor-pointer">Terms and conditions</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-12 pt-3 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row gap-3 justify-center md:justify-start items-center text-sm font-medium text-gray-600">
-                        <p className="text-sm">©{new Date().getFullYear()} Diagram X. All rights reserved. Design By Narihito.</p>
-                    </div>
-                </div>
-            </footer>
+            <SiteFooter />
         </>
     )
 }

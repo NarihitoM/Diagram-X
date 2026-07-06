@@ -18,6 +18,14 @@ import { useEffect } from "react";
 import { Error } from "./error/error";
 import { Workspacemenu } from "./pages/dashboard/workspacemenu";
 import { Profile } from "./pages/dashboard/profile";
+import { DocsLayout } from "./components/docs/docs-layout";
+import { DocsIndex } from "./pages/docs/index";
+import { DocsGettingStarted } from "./pages/docs/getting-started";
+import { DocsFeatures } from "./pages/docs/features";
+import { DocsNodeTypes } from "./pages/docs/node-types";
+import { DocsAiAgent } from "./pages/docs/ai-agent";
+import { DocsWorkspace } from "./pages/docs/workspace";
+import { DocsFaq } from "./pages/docs/faq";
 
 function App() {
 
@@ -32,11 +40,20 @@ function App() {
     <QueryClientProvider client={State}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Chatbot />}>
-            <Route index element={<MainPage />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
+            <Route path="/" element={<Chatbot />}>
+              <Route index element={<MainPage />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="docs" element={<DocsLayout />}>
+                <Route index element={<DocsIndex />} />
+                <Route path="getting-started" element={<DocsGettingStarted />} />
+                <Route path="features" element={<DocsFeatures />} />
+                <Route path="node-types" element={<DocsNodeTypes />} />
+                <Route path="ai-agent" element={<DocsAiAgent />} />
+                <Route path="workspace" element={<DocsWorkspace />} />
+                <Route path="faq" element={<DocsFaq />} />
+              </Route>
+            </Route>
           <Route element={<Protectedroute />} >
             <Route path="/dashboard" element={<Sidebarrender />} >
               <Route index element={<Dashboard />} />
