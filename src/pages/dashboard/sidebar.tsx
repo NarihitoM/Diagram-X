@@ -18,10 +18,9 @@ export const Sidebarrender = () => {
     const handlelogout = async () => {
         try {
             const result = await userlogout();
-            toast.success(result.message || "Log out successful!")
-            setTimeout(() => {
-                navigate("/login")
-            }, 2000);
+            localStorage.removeItem("isLoggedIn");
+            toast.success(result.message || "Log out successful!");
+            navigate("/login", { replace: true });
         }
         catch (err: any) {
             toast.error(err?.response?.data?.message || "It seems something went wrong");

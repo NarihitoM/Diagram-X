@@ -103,8 +103,11 @@ export const useAuth = create<createauth>((set) => ({
         useremail: null,
         userid: null,
         profileurl: null,
+        bio: null,
+        phone: null,
+        town: null,
         session: null,
-        sessionReady: false,
+        sessionReady: true,
       });
       return result;
     } catch (err: unknown) {
