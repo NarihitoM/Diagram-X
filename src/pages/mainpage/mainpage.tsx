@@ -19,7 +19,7 @@ export const MainPage = () => {
         <>
             <header className="fixed top-0 left-0 w-full z-50 flex p-3 justify-between items-center border-b border-black/15 bg-white/10 backdrop-blur-md">
                 <div className="flex flex-row items-center gap-2">
-                    <img src={DiagramXLogo} alt="Diagram X" className="size-12 rounded-lg" />
+                    <img src={DiagramXLogo} alt="Diagram X" className="size-15 rounded-lg" />
                     <h1 className="font-bold text-xl"><span className="text-cyan-500">D</span>iagram X</h1>
                     <div className="hidden md:flex items-center gap-4 ml-5">
                         <Link to="/" className="text-muted-foreground font-medium">DiagramX</Link>

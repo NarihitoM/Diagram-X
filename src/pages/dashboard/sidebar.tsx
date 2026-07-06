@@ -47,7 +47,7 @@ export const Sidebarrender = () => {
                         <SidebarGroup className="max-md:hidden">
                             <SidebarGroupLabel className="text-2xl fond-bold text-black dark:text-white flex items-center gap-2">
                                 <img src={DiagramXLogo} alt="Diagram X" className="size-8 rounded" />
-                                <span className="text-cyan-500">D</span>iagram-X
+                                Diagram-X
                             </SidebarGroupLabel>
                         </SidebarGroup>
                         <SidebarGroup>
