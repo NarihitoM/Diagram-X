@@ -109,10 +109,10 @@ export const Sidebarrender = () => {
                     </SidebarFooter>
                 </Sidebar>
                 <SidebarInset>
-                    <div className="z-10 fixed py-3 px-2 top-0 left-0 w-full  bg-white flex flex-row items-center gap-3 border-b md:hidden ">
+                    <div className="z-10 fixed py-3 px-3 sm:px-4 top-0 left-0 w-full  bg-white flex flex-row items-center gap-3 border-b md:hidden ">
                         <SidebarTrigger className="md:hidden" />
                     </div>
-                    <main className="flex flex-col px-5 py-15 md:py-4">
+                    <main className="flex flex-col px-3 sm:px-4 md:px-5 lg:px-6 py-15 md:py-4">
                         <Outlet />
                     </main>
                 </SidebarInset>

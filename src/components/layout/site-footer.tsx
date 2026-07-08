@@ -4,8 +4,8 @@ import DiagramXLogo from "@/assets/DiagramX-Icon.png"
 export function SiteFooter() {
   return (
     <footer className="w-full border-t border-black/10 dark:border-white/10 bg-white dark:bg-black">
-      <div className="w-full px-10 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-15">
+      <div className="w-full px-4 sm:px-8 md:px-10 lg:px-16 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-15">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <img src={DiagramXLogo} alt="Diagram X" className="size-10 rounded" />

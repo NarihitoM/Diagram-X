@@ -10,10 +10,10 @@ export const Contact = () => {
     return (
         <>
             <SiteHeader activePage="contact" />
-            <section className="min-h-screen w-full h-full flex flex-col py-20 pt-36">
+            <section className="min-h-screen w-full h-full flex flex-col py-20 pt-36 px-4 sm:px-8 md:px-10 lg:px-16">
                 <div className="pt-10 flex flex-col gap-5 items-center">
                     <div className="flex flex-row justify-center gap-3 items-center">
-                        <h1 className="font-semibold text-4xl">Contact Us
+                        <h1 className="font-semibold text-3xl sm:text-4xl">Contact Us
                         </h1>
                         <Contact2 className="size-8 text-cyan-500" />
                     </div>

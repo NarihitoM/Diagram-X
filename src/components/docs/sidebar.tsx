@@ -76,7 +76,7 @@ function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
 
 export function DocsSidebar() {
   return (
-    <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-52 shrink-0 flex-col overflow-y-auto border-r border-border/40 lg:flex">
+    <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-48 lg:w-52 xl:w-56 shrink-0 flex-col overflow-y-auto border-r border-border/40 lg:flex">
       <SidebarContent />
     </aside>
   )

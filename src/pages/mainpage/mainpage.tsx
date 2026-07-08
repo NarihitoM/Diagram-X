@@ -18,8 +18,8 @@ export const MainPage = () => {
         <>
             <SiteHeader activePage="home" />
             <main className="h-full w-full pt-16">
-                <section className="bg-linear-to-t from-cyan-50 to-white flex max-md:flex-col justify-between max-md:justify-center max-md:py-30 items-center min-h-screen">
-                    <div className="flex flex-col px-10 items-start max-md:items-center gap-4">
+                <section className="bg-linear-to-t from-cyan-50 to-white flex max-md:flex-col justify-between max-md:justify-center max-md:py-30 items-center min-h-screen px-4 sm:px-8 md:px-10 lg:px-16">
+                    <div className="flex flex-col px-4 sm:px-8 md:px-10 lg:px-16 items-start max-md:items-center gap-4">
                         <Button className="bg-cyan-500 rounded-full shadow-[3px_3px_5px_0_cyan] text-[16px] animate-bounce">Diagram X</Button>
                         <h1 className="font-bold max-md:text-4xl md:text-5xl xl:text-6xl max-md:text-center">
                             Work your projects and create ideas with
@@ -47,8 +47,8 @@ export const MainPage = () => {
                     </div>
                 </section>
                 <section className="flex flex-col min-h-screen  gap-10 py-20">
-                    <div className="flex flex-col gap-3 px-10">
-                        <h1 className="font-semibold text-4xl ">
+                    <div className="flex flex-col gap-3 px-4 sm:px-8 md:px-10 lg:px-16">
+                        <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl">
                             Stop fighting with static <span className="text-cyan-500">Diagrams!</span>
                         </h1>
                         <p className="font-medium text-[18px]">
@@ -62,43 +62,43 @@ export const MainPage = () => {
                         </Link>
                         <div className="max-md:flex grid grid-cols-2 mt-10 max-md:flex-col max-md:items-center max-md:justify-center gap-3">
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Dataflow</span> Schema</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">Dataflow</span> Schema</h1>
                                 <SampleDataflow />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Database</span> Schema</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">Database</span> Schema</h1>
                                 <SampleDatabase />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Sequence</span> Diagram</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">Sequence</span> Diagram</h1>
                                 <SampleSequence />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">UML Class</span> Diagram</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">UML Class</span> Diagram</h1>
                                 <SampleUmlClass />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">ER</span> Diagram</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">ER</span> Diagram</h1>
                                 <SampleEr />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">State</span> Diagram</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">State</span> Diagram</h1>
                                 <SampleState />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Mind Map</span> Diagram</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">Mind Map</span> Diagram</h1>
                                 <SampleMindMap />
                             </div>
                             <div className="flex flex-col w-full gap-3 h-80">
-                                <h1 className="text-xl font-medium"><span className="text-cyan-500">Activity</span> Diagram</h1>
+                                <h1 className="text-base sm:text-lg md:text-xl font-medium"><span className="text-cyan-500">Activity</span> Diagram</h1>
                                 <SampleActivity />
                             </div>
                         </div>
                     </div>
                 </section>
-                <section className="flex flex-col bg-linear-to-tr from-white to-cyan-50  gap-20 min-h-screen px-10 items-center py-20">
+                <section className="flex flex-col bg-linear-to-tr from-white to-cyan-50  gap-20 min-h-screen px-4 sm:px-8 md:px-10 lg:px-16 items-center py-20">
                     <div className="flex flex-row justify-center gap-3 items-center">
-                        <h1 className="font-semibold text-4xl">
+                        <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl">
                             Trusted By
                         </h1>
                         <ChartBar className="text-cyan-500 size-8" />
@@ -119,9 +119,9 @@ export const MainPage = () => {
                         </Button>
                     </Link>
                 </section>
-                <section className="flex flex-col items-center bg-linear-to-br from-white to-cyan-50  gap-10 min-h-screen py-20 px-10">
+                <section className="flex flex-col items-center bg-linear-to-br from-white to-cyan-50  gap-10 min-h-screen py-20 px-4 sm:px-8 md:px-10 lg:px-16">
                     <div className="flex flex-row justify-center gap-3 items-center">
-                        <h1 className="font-semibold text-4xl">Features
+                        <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl">Features
                         </h1>
                         <List className="size-8 text-cyan-500" />
                     </div>
@@ -150,7 +150,7 @@ export const MainPage = () => {
                         })}
                     </div>
                 </section>
-                <section className="flex flex-col items-center bg-linear-to-bl from-cyan-0 to-white gap-20  py-20 px-10">
+                <section className="flex flex-col items-center bg-linear-to-bl from-cyan-0 to-white gap-20  py-20 px-4 sm:px-8 md:px-10 lg:px-16">
                     <div className="flex flex-row items-center gap-3">
                         <h1 className="font-semibold text-5xl max-md:text-3xl">Let's Get Started!</h1>
                         <Rocket className="text-cyan-500 size-8"/>

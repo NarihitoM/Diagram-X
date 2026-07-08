@@ -14,11 +14,11 @@ export function SiteHeader({ activePage }: { activePage?: Page }) {
     `${page === activePage ? "text-cyan-500" : "text-muted-foreground"} font-medium`
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between border-b border-black/15 bg-white/10 backdrop-blur-md px-4 lg:px-6">
-      <div className="flex flex-row items-center gap-2">
-        <img src={DiagramXLogo} alt="Diagram X" className="size-15 rounded-lg" />
-        <h1 className="font-bold text-xl"><span className="text-cyan-500">D</span>iagram X</h1>
-        <div className="hidden md:flex items-center gap-4 ml-5">
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between border-b border-black/15 bg-white/10 backdrop-blur-md px-3 sm:px-5 md:px-6 lg:px-8">
+      <div className="flex flex-row items-center gap-1 sm:gap-2">
+        <img src={DiagramXLogo} alt="Diagram X" className="size-10 sm:size-12 md:size-15 rounded-lg" />
+        <h1 className="font-bold text-lg sm:text-xl"><span className="text-cyan-500">D</span>iagram X</h1>
+        <div className="hidden md:flex items-center gap-3 lg:gap-5 ml-3 lg:ml-5">
           <Link to="/" className={linkClass("home")}>DiagramX</Link>
           <Link to="/docs" className={linkClass("docs")}>Docs</Link>
           <Link to="/blog" className={linkClass("blog")}>Blog</Link>
