@@ -26,6 +26,7 @@ import { DocsNodeTypes } from "./pages/docs/node-types";
 import { DocsAiAgent } from "./pages/docs/ai-agent";
 import { DocsWorkspace } from "./pages/docs/workspace";
 import { DocsFaq } from "./pages/docs/faq";
+import { ScrollToTop } from "./components/scroll-to-top";
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
   return (
     <QueryClientProvider client={State}>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
             <Route path="/" element={<Chatbot />}>
               <Route index element={<MainPage />} />

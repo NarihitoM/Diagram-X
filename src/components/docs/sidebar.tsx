@@ -117,7 +117,7 @@ export function MobileDocsHeader({ headings }: { headings: TOCItem[] }) {
   }, [headings])
 
   return (
-    <div className="fixed w-full left-0 top-16 z-40 flex items-center justify-between border-b backdrop-blur-md border-border/60 bg-background/40 py-2 lg:hidden">
+    <div className="fixed w-full left-0 top-16 z-40 flex items-center justify-between border-b backdrop-blur-md border-border/60 bg-background/40 px-3 py-2 lg:hidden">
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetTrigger className="flex items-center gap-2 rounded-lg border border-transparent px-2 py-1.5 text-sm font-medium transition-all duration-300 hover:border-cyan-500 hover:bg-cyan-500/5 active:scale-95">
           <Menu className="size-4" />
